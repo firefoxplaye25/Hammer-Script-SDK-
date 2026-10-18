@@ -19,6 +19,7 @@ bin/
 # Temporary test scripts
 examples/test_autoload.hmscp
 examples/test_syntax.hmscp
+images.jpg
 
 # IDE & Editor caches
 .vs/
