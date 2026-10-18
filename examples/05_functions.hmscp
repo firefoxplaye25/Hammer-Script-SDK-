@@ -1,0 +1,29 @@
+# ===================================================
+# Example 5: Actions (Functions) & Return Values
+# ===================================================
+
+# Defining an action is clean:
+action greet(name)
+    show "Hello, " + name + "! Welcome to Hammer Script."
+end
+
+# An action that gives (returns) a value:
+action add_numbers(a, b)
+    give a + b
+end
+
+action calculate_discount(price, percentage)
+    set discount_amount to (price * percentage) / 100
+    set final_price to price - discount_amount
+    give final_price
+end
+
+# Calling our actions:
+greet("Alice")
+greet("Bob")
+
+set sum to add_numbers(40, 2)
+show "40 + 2 = " + sum
+
+set discounted to calculate_discount(150, 20)
+show "Original: $150, After 20% discount: $" + discounted

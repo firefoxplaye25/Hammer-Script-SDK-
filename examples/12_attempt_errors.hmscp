@@ -1,0 +1,22 @@
+# ===================================================
+# Example 12: Safe Error Handling (attempt ... on error)
+# ===================================================
+
+show "Attempting to read a missing file safely..."
+
+attempt
+    set data to read_file("non_existent_file.txt")
+    show "File data: " + data
+on error problem
+    show "Safe Catch! Could not read file: {problem}"
+end
+
+show "\nAttempting division by zero safely..."
+attempt
+    set result to 100 / 0
+    show "Result: " + result
+on error err
+    show "Safe Catch! Math error handled: {err}"
+end
+
+show "\nProgram recovered and finished successfully!"

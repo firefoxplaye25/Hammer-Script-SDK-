@@ -1,0 +1,25 @@
+# ===================================================
+# Example 4: Loops Made Easy
+# ===================================================
+
+# Repeat loop: cleaner and clearer than range() in Python!
+show "--- Repeat Loop Demo ---"
+repeat 3 times
+    show "Hammer makes repetitive tasks a breeze!"
+end
+
+# For each loop:
+show "\n--- For Each Item in List ---"
+set heroes to ["Thor", "Iron Man", "Spider-Man", "Hulk"]
+for each hero in heroes
+    show "Hero: " + hero
+end
+
+# While loop:
+show "\n--- Countdown While Loop ---"
+set timer to 3
+while timer is greater than 0
+    show "Launching in... " + timer
+    set timer to timer - 1
+end
+show "Blast off! 🚀"

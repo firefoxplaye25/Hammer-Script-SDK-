@@ -1,0 +1,27 @@
+# ========================================================
+# Hammer Script Standard Library: string.hmscp
+# ========================================================
+
+action pad_left(str, target_len, pad_char)
+    set result to str
+    while length(result) < target_len
+        set result to pad_char + result
+    end
+    give result
+end
+
+action pad_right(str, target_len, pad_char)
+    set result to str
+    while length(result) < target_len
+        set result to result + pad_char
+    end
+    give result
+end
+
+action repeat_str(str, count)
+    set result to ""
+    repeat count times
+        set result to result + str
+    end
+    give result
+end

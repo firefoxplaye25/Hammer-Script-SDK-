@@ -1,0 +1,35 @@
+# ========================================================
+# Hammer Script - Community & Monolithiiun Libs Demo
+# ========================================================
+
+include "ansi_colors"
+include "matrix_math"
+
+show "=================================================="
+show "      Community & Monolithiiun Libraries Demo     "
+show "=================================================="
+
+# 1. Using Verified Monolithiiun Library (ansi_colors)
+show "1. Terminal Colors via 'ansi_colors' library:"
+show color_green("[SUCCESS] This green text came from ansi_colors lib!")
+show color_cyan("[INFO] Cyan colored message loaded from Monolithiiun repo.")
+show color_red("[ALERT] Red warning text rendered successfully!")
+
+# 2. Using Community Library (matrix_math)
+show ""
+show "2. Vector Operations via 'matrix_math' community lib:"
+set vecA to [10, 20, 30]
+set vecB to [1, 2, 3]
+
+show "   Vector A: " + vecA
+show "   Vector B: " + vecB
+
+set sum to vector_add(vecA, vecB)
+show "   Vector Sum (A + B): " + sum
+
+set dot to vector_dot(vecA, vecB)
+show "   Dot Product (A . B): " + dot
+
+show "=================================================="
+show color_green(" Library ecosystem demo finished successfully! ")
+show "=================================================="

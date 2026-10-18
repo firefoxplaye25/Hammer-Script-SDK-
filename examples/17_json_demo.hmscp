@@ -1,0 +1,45 @@
+# ========================================================
+# Hammer Script - Native JSON Support Demo
+# ========================================================
+
+show "=================================================="
+show "          Native JSON (parse & encode)            "
+show "=================================================="
+
+# 1. Parsing a JSON string from a Web API (using single quotes so { is not treated as string interpolation)
+set rawJson to '{"id": 101, "title": "Buy groceries", "completed": false, "tags": ["home", "food"]}'
+show "1. Raw JSON Input: "
+show rawJson
+
+set parsed to json_parse(rawJson)
+show "\n2. Parsed to native Hammer Script Value:"
+show "   ID: " + parsed["id"]
+show "   Title: " + parsed["title"]
+show "   Completed? " + parsed["completed"]
+show "   Tags: " + parsed["tags"]
+show "   First tag: " + parsed["tags"][0]
+
+# 2. Creating native data and encoding to JSON
+set serverConfig to {
+    "server": "HammerCloud",
+    "port": 8080,
+    "ssl": true,
+    "allowed_roles": ["admin", "developer", "guest"]
+}
+
+show "\n3. Native Map:"
+show serverConfig
+
+set jsonString to json_encode(serverConfig)
+show "\n4. Encoded JSON String:"
+show jsonString
+
+show "\n5. Round-trip verify:"
+set roundTrip to json_parse(jsonString)
+show "   Server Name: " + roundTrip["server"]
+show "   Port: " + roundTrip["port"]
+show "   Roles: " + roundTrip["allowed_roles"]
+
+show "=================================================="
+show " JSON demo completed successfully!                "
+show "=================================================="

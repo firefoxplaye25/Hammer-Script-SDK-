@@ -1,0 +1,51 @@
+# ========================================================
+# Hammer Script - File System & OS Runtime Demo (hamfs)
+# ========================================================
+
+show "=================================================="
+show "          Hammer Script - hamfs Demo              "
+show "=================================================="
+
+set testDir to "hamfs_sandbox"
+set testFile to "hamfs_sandbox/test.txt"
+
+show "1. Creating directory: " + testDir
+set dirResult to hamfs_make_dir(testDir)
+show "   Created? " + dirResult
+
+show "2. Writing file: " + testFile
+set content to "Hello from Hammer Script hamfs!\nFast, safe, and native OS runtime.\n"
+set writeResult to hamfs_write(testFile, content)
+show "   Written? " + writeResult
+
+show "3. Checking file existence:"
+show "   Exists? " + hamfs_exists(testFile)
+show "   Is File? " + hamfs_is_file(testFile)
+show "   Is Folder? " + hamfs_is_folder(testDir)
+
+show "4. Reading file content:"
+set readBack to hamfs_read(testFile)
+show readBack
+
+show "5. Appending to file:"
+hamfs_append(testFile, "Appended line: Hammer Script rocks!\n")
+show "   New file size: " + hamfs_size(testFile) + " bytes"
+
+show "6. Listing directory contents:"
+set items to hamfs_list(testDir)
+show "   Items in " + testDir + ": " + items
+
+show "7. Current working directory:"
+show "   CWD: " + hamfs_cwd()
+
+show "8. Running OS command (echo test):"
+set execResult to hamfs_exec("cmd /c echo Hammer Script OS Execution")
+show "   Output: " + execResult["output"]
+
+show "9. Cleaning up test sandbox:"
+set delResult to hamfs_delete(testDir)
+show "   Deleted sandbox? " + delResult
+
+show "=================================================="
+show " hamfs test completed successfully!              "
+show "=================================================="

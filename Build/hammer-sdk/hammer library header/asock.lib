@@ -1,0 +1,44 @@
+# ========================================================
+# Hammer Script Engine - asock.lib / hmhookwww.lib
+# High-Performance Internet & Networking Subsystem
+# ========================================================
+
+asock_get(url)                    -> Send HTTP/HTTPS GET request
+                                      Returns map: {"ok": bool, "status": int, "body": str, "url": str}
+
+asock_post(url, body, headers)    -> Send HTTP/HTTPS POST request with body & custom headers
+                                      Returns map: {"ok": bool, "status": int, "body": str, "url": str}
+
+asock_download(url, dest_path)    -> Stream download from URL directly to disk
+                                      Returns true/false
+
+asock_connect(host, port)         -> Open TCP socket stream
+                                      Returns socket ID handle or -1
+
+asock_send(socket_id, message)    -> Send raw TCP data
+                                      Returns true/false
+
+asock_recv(socket_id, max_bytes)  -> Receive raw TCP buffer from socket
+                                      Returns string
+
+asock_close(socket_id)            -> Close TCP socket
+
+# Top-level helper:
+fetch(url, optional_body, headers) -> Shortcut for GET or POST if body is provided
+
+# Aliases (hmhookwww):
+hmhookwww_get(url)                -> Identical to asock_get(url)
+hmhookwww_post(url, body, hdrs)   -> Identical to asock_post(url, body, hdrs)
+hmhookwww_download(url, dest)     -> Identical to asock_download(url, dest)
+hmhookwww_connect(host, port)     -> Identical to asock_connect(host, port)
+hmhookwww_send(sock, msg)         -> Identical to asock_send(sock, msg)
+hmhookwww_recv(sock, max_bytes)   -> Identical to asock_recv(sock, max_bytes)
+hmhookwww_close(sock)             -> Identical to asock_close(sock)
+
+# Object Namespace:
+asock["get"](url)
+asock["post"](url, body, headers)
+asock["download"](url, dest)
+hmhookwww["get"](url)
+hmhookwww["post"](url, body, headers)
+hmhookwww["download"](url, dest)

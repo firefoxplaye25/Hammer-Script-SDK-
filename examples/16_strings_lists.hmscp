@@ -1,0 +1,80 @@
+# ========================================================
+# Hammer Script - Strings, Lists, Maps & Slicing Demo
+# ========================================================
+
+show "=================================================="
+show "     Strings, Lists, Maps & Natural Slicing       "
+show "=================================================="
+
+# 1. String Utilities
+set greeting to "  Welcome to Hammer Script Programming!  "
+show "Original: '" + greeting + "'"
+show "Trimmed: '" + trim(greeting) + "'"
+show "Upper: " + to_upper(greeting)
+show "Lower: " + to_lower(greeting)
+show "Replaced: " + replace(greeting, "Hammer", "Super Hammer")
+
+show "Contains 'Script'? " + contains(greeting, "Script")
+show "Starts with '  Welcome'? " + starts_with(greeting, "  Welcome")
+show "Ends with 'ing!  '? " + ends_with(greeting, "ing!  ")
+
+# 2. Split & Join
+set csv to "apple,banana,orange,grape,mango"
+show "\nOriginal CSV: " + csv
+set fruits to split(csv, ",")
+show "Fruits list: " + fruits
+show "Length of fruits: " + length(fruits)
+
+set joined to join(fruits, " -> ")
+show "Joined fruits: " + joined
+
+# 3. List Manipulation
+show "\n--- List Operations ---"
+set numbers to [40, 10, 50, 20, 30]
+show "Original numbers: " + numbers
+
+sort(numbers)
+show "Sorted numbers: " + numbers
+
+reverse(numbers)
+show "Reversed numbers: " + numbers
+
+show "Popped last element: " + pop(numbers)
+show "After pop: " + numbers
+
+insert(numbers, 1, 99)
+show "After insert 99 at index 1: " + numbers
+
+show "Removed element at index 2: " + remove_at(numbers, 2)
+show "After remove_at: " + numbers
+
+# 4. Natural Slicing [start to end]
+show "\n--- Natural Slicing ---"
+set alphabet to ["a", "b", "c", "d", "e", "f", "g"]
+show "Alphabet: " + alphabet
+
+set slice1 to alphabet[1 to 3]
+show "alphabet[1 to 3]: " + slice1
+
+set slice2 to alphabet[2 to 5]
+show "alphabet[2 to 5]: " + slice2
+
+set word to "HammerScript"
+show "String slice 'HammerScript'[0 to 5]: " + word[0 to 5]
+
+# 5. Map Operations
+show "\n--- Map Operations ---"
+set player to {
+    "name": "Thor",
+    "weapon": "Mjolnir",
+    "power": 9000
+}
+show "Player map: " + player
+show "Keys: " + keys(player)
+show "Values: " + values(player)
+show "Has key 'weapon'? " + has_key(player, "weapon")
+show "Has key 'health'? " + has_key(player, "health")
+
+show "=================================================="
+show " String, List & Map demo finished successfully!  "
+show "=================================================="

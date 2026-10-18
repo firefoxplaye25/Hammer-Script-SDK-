@@ -1,0 +1,16 @@
+# ========================================================
+# Hammer Script Engine - hmripa.lib
+# Primitive File & Data Encryptor / Decryptor Subsystem
+# ========================================================
+
+hmripa_encrypt_file(source_file, target_file, key) -> Encrypts file with key validation header
+hmripa_decrypt_file(source_file, target_file, key) -> Decrypts file (returns false if wrong key)
+hmripa_encrypt(text, key)                          -> Encrypts string to hex
+hmripa_decrypt(cipher_hex, key)                    -> Decrypts hex back to string
+hmripa_hash(data)                                  -> Fast 64-bit data hash
+
+hmripa["encrypt_file"](src, dst, key)
+hmripa["decrypt_file"](src, dst, key)
+hmripa["encrypt"](text, key)
+hmripa["decrypt"](cipher_hex, key)
+hmripa["hash"](data)

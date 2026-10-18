@@ -1,0 +1,7 @@
+{
+  "name": "mymath",
+  "author": "developer",
+  "version": "1.0.0",
+  "description": "Custom module extending Hammer Script with new functions",
+  "entry": "mymath.hmscp"
+}

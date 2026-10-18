@@ -1,0 +1,39 @@
+# ========================================================
+# Hammer Script - Git Ignore Configuration
+# ========================================================
+
+# Sensitive data and private credentials
+secrets/
+*.secret
+*.key
+*.pem
+
+# Root build and intermediate binaries (development cache)
+bin/
+*.o
+*.obj
+*.tmp
+*.tmp.*
+*.hamhook.tmp.cpp
+
+# Temporary test scripts
+examples/test_autoload.hmscp
+examples/test_syntax.hmscp
+
+# IDE & Editor caches
+.vs/
+.history/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Windows system files
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Ensure distribution builds and releases are tracked as requested
+!Build/
+!Build/hammer-sdk/
+!Build/hammer-sdk.zip

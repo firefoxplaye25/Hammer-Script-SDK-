@@ -1,0 +1,17 @@
+# ========================================================
+# Hammer Script Native Library Header - hmhook.lib
+# Dedicated Standalone Windows PE Compiler & Linker Subsystem
+# ========================================================
+
+# Compiles Hammer Script source code into a true standalone native Windows PE executable (.exe).
+# Runs in ~40ms with ZERO external dependencies (no g++, no msys2, no external toolchains required).
+
+# Command line usage:
+#   hammer hamhook <source.hmscp> [-o output.exe] [--no-console] [--icon app.ico]
+#   hamhook <source.hmscp> [-o output.exe] [--no-console] [--icon app.ico]
+
+# Flags:
+#   -o <path>           Specify output executable name/path (defaults to source name .exe)
+#   --no-console / -w   Patch PE Subsystem to 2 (IMAGE_SUBSYSTEM_WINDOWS_GUI) for silent GUI execution
+#   --icon <ico_path>   Embed native Windows application icon
+#   --keep-cpp          Keep intermediate transpiled C++ source for code auditing

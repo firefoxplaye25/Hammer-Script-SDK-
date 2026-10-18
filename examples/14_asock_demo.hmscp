@@ -1,0 +1,41 @@
+# ========================================================
+# Hammer Script - Networking Demo (asock & hmhookwww)
+# ========================================================
+
+show "=================================================="
+show "   Hammer Script - asock & hmhookwww Demo         "
+show "=================================================="
+
+show "1. Fetching HTTP GET via asock:"
+set res1 to asock_get("https://httpbin.org/get")
+show "   Status: " + res1["status"]
+show "   Success? " + res1["ok"]
+
+show "2. Fetching HTTP GET via hmhookwww (alias):"
+set res2 to hmhookwww_get("https://api.github.com")
+show "   Status: " + res2["status"]
+show "   Success? " + res2["ok"]
+
+show "3. Fetching HTTP GET via top-level fetch():"
+set res3 to fetch("https://jsonplaceholder.typicode.com/todos/1")
+show "   Status: " + res3["status"]
+show "   Response Body snippet: "
+show res3["body"]
+
+show "4. Downloading a file with asock_download:"
+set dlUrl to "https://raw.githubusercontent.com/curl/curl/master/COPYING"
+set dlDest to "curl_license.txt"
+show "   Downloading from " + dlUrl + " to " + dlDest
+set okDl to asock_download(dlUrl, dlDest)
+show "   Downloaded? " + okDl
+
+if hamfs_exists(dlDest) then
+    show "   Saved file size: " + hamfs_size(dlDest) + " bytes"
+    show "   Deleting downloaded temp file..."
+    hamfs_delete(dlDest)
+    show "   Cleaned up!"
+end
+
+show "=================================================="
+show " asock / hmhookwww demo completed successfully!   "
+show "=================================================="

@@ -1,0 +1,23 @@
+# ========================================================
+# Monolithiiun Verified Library: ansi_colors
+# ========================================================
+
+action color_red(text)
+    give "\033[1;31m" + text + "\033[0m"
+end
+
+action color_green(text)
+    give "\033[1;32m" + text + "\033[0m"
+end
+
+action color_yellow(text)
+    give "\033[1;33m" + text + "\033[0m"
+end
+
+action color_cyan(text)
+    give "\033[1;36m" + text + "\033[0m"
+end
+
+action color_bold(text)
+    give "\033[1m" + text + "\033[0m"
+end

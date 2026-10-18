@@ -1,0 +1,19 @@
+# ===================================================
+# Example 11: Range Loops (repeat with from to step)
+# ===================================================
+
+show "--- Counting Up from 1 to 5 ---"
+repeat with i from 1 to 5
+    show "Count: " + i
+end
+
+show "\n--- Counting by 2s ---"
+repeat with n from 0 to 10 step 2
+    show "Even number: " + n
+end
+
+show "\n--- Countdown ---"
+repeat with rocket from 3 to 1 step -1
+    show "Rocket T-minus: " + rocket
+end
+show "Liftoff! 🚀"

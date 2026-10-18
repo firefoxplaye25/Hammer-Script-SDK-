@@ -1,0 +1,32 @@
+# ===================================================
+# Example 6: Lists & Maps (Dictionaries)
+# ===================================================
+
+# Creating a list:
+set inventory to ["Iron Sword", "Wooden Shield", "Health Potion"]
+
+show "Your inventory has " + length(inventory) + " items:"
+for each item in inventory
+    show " - " + item
+end
+
+# Adding a new item:
+push(inventory, "Magic Ring")
+show "\nAfter finding treasure, inventory has: " + length(inventory) + " items."
+show "Last item: " + inventory[3]
+
+# Updating an item:
+set inventory[0] to "Diamond Sword"
+show "Upgraded weapon: " + inventory[0]
+
+# Creating a map (dictionary):
+set player_stats to {
+    "name": "HammerWarrior",
+    "level": 15,
+    "power": 350
+}
+
+show "\nPlayer Profile:"
+show "Name: " + player_stats["name"]
+show "Level: " + player_stats["level"]
+show "Power: " + player_stats["power"]

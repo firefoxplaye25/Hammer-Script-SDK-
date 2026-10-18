@@ -1,0 +1,15 @@
+# ===================================================
+# Module: Math Utilities (math_utils.hmscp)
+# ===================================================
+
+action square(n)
+    give n * n
+end
+
+action cube(n)
+    give n * n * n
+end
+
+action average(a, b)
+    give (a + b) / 2
+end

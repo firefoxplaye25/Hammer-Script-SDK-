@@ -1,0 +1,10 @@
+# ===================================================
+# Example 9: Including external modules
+# ===================================================
+
+include "examples/math_utils.hmscp"
+
+show "--- Math Utilities Included ---"
+show "Square of 7 is: " + square(7)
+show "Cube of 3 is: " + cube(3)
+show "Average of 10 and 20 is: " + average(10, 20)

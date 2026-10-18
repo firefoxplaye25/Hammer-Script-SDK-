@@ -1,0 +1,13 @@
+================================================================================
+               HAMMER SCRIPT LIB LOADER - SECURITY NOTICE                      
+================================================================================
+WARNING: Community libraries installed from unknown third-party authors may    
+contain malicious code, file system modifications, or security risks.          
+
+Always inspect the source code of community packages in:                        
+  'lib loader/community/<package_name>/'                                        
+
+For complete security and verified safety, ONLY install packages published      
+under the official monolithic channel:                                          
+  hammer inst hmx --monolithiiun <package_name>                                 
+================================================================================

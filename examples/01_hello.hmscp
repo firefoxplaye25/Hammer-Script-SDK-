@@ -1,0 +1,13 @@
+# ===================================================
+# Example 1: Hello World & Natural English Syntax
+# ===================================================
+
+show "Hello, World! Welcome to Hammer Script."
+show "Hammer Script is designed to be easier and more intuitive than Python!"
+
+# Seamless string and number concatenation without manual casting!
+set score to 100
+show "Your initial score is: " + score
+
+set name to "Coder"
+show "Welcome aboard, " + name + "!"

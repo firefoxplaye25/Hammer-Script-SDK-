@@ -1,0 +1,32 @@
+# ========================================================
+# Hammer Script - Block Comments (note ... end note)
+# ========================================================
+
+show "=================================================="
+show "        Multi-line Block Comments Demo            "
+show "=================================================="
+
+note
+    This is a multi-line note block in Hammer Script!
+    Everything written between 'note' and 'end note'
+    is completely ignored by the compiler and interpreter.
+
+    You can write explanations, documentation, or disable
+    entire chunks of code easily:
+
+    show "This will never run!"
+    set secret to 12345
+end note
+
+set activeVar to "I am running normally!"
+show "Active code: " + activeVar
+
+note
+Another note block with notes for the team:
+- Version: 2.1
+- Engine: Hammer Script Core
+- Status: Fully working
+end note
+
+show "Program continues flawlessly after multiple note blocks!"
+show "=================================================="

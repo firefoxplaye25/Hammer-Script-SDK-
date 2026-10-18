@@ -1,0 +1,12 @@
+# ===================================================
+# Example 10: String Interpolation (No more tedious +)
+# ===================================================
+
+set player to "Arthur"
+set level to 10
+set xp to 2500
+
+# Seamless string interpolation inside {expressions}!
+show "Welcome back, {player}!"
+show "You are currently Level {level} with {xp} XP."
+show "Next level requires {xp + 500} XP!"

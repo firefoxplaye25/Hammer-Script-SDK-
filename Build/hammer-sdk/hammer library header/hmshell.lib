@@ -1,0 +1,20 @@
+# ========================================================
+# Hammer Script Engine - hmshell.lib
+# Terminal, Console Control & Process Execution Subsystem
+# ========================================================
+
+hmshell_clear()                  -> Clears the console screen
+hmshell_title(title_string)      -> Sets terminal window title
+hmshell_cursor(x, y)             -> Positions terminal cursor at column x, row y
+hmshell_color(color_name)        -> Sets console text color:
+                                    "red", "green", "blue", "yellow", "cyan", "magenta", "white", "reset"
+hmshell_pause(prompt_optional)   -> Waits for a single keypress without requiring Enter
+hmshell_exec(command)            -> Executes shell command and returns output string
+
+# Object Namespace:
+hmshell["clear"]()
+hmshell["title"](title)
+hmshell["cursor"](x, y)
+hmshell["color"](name)
+hmshell["pause"](prompt)
+hmshell["exec"](command)

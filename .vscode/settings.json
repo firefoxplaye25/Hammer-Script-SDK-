@@ -1,0 +1,74 @@
+{
+  "files.associations": {
+    "*.hmscp": "hammerscript"
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "entity.name.function.hmscp",
+        "settings": {
+          "foreground": "#DCDCAA",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "entity.name.function.call.hmscp",
+        "settings": {
+          "foreground": "#DCDCAA"
+        }
+      },
+      {
+        "scope": "support.function.builtin.hmscp",
+        "settings": {
+          "foreground": "#4EC9B0",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "keyword.control.hmscp",
+        "settings": {
+          "foreground": "#C586C0",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "keyword.other.hmscp",
+        "settings": {
+          "foreground": "#569CD6"
+        }
+      },
+      {
+        "scope": "string.quoted.double.hmscp",
+        "settings": {
+          "foreground": "#CE9178"
+        }
+      },
+      {
+        "scope": "string.quoted.single.hmscp",
+        "settings": {
+          "foreground": "#CE9178"
+        }
+      },
+      {
+        "scope": "constant.numeric.decimal.hmscp",
+        "settings": {
+          "foreground": "#B5CEA8"
+        }
+      },
+      {
+        "scope": "comment.line.number-sign.hmscp",
+        "settings": {
+          "foreground": "#6A9955",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "comment.block.note.hmscp",
+        "settings": {
+          "foreground": "#6A9955",
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  }
+}

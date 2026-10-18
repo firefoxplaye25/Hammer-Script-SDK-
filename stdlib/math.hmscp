@@ -1,0 +1,25 @@
+# ========================================================
+# Hammer Script Standard Library: math.hmscp
+# ========================================================
+
+action clamp(val, min_val, max_val)
+    if val < min_val then
+        give min_val
+    elseif val > max_val then
+        give max_val
+    else
+        give val
+    end
+end
+
+action lerp(start_val, end_val, t)
+    give start_val + (end_val - start_val) * t
+end
+
+action is_even(num)
+    give (num % 2) == 0
+end
+
+action is_odd(num)
+    give (num % 2) != 0
+end

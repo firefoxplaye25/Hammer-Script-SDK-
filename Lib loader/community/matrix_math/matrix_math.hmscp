@@ -1,0 +1,22 @@
+# ========================================================
+# Community Library: matrix_math
+# Author: @math_guru
+# ========================================================
+
+action vector_add(v1, v2)
+    set result to []
+    set maxIdx to length(v1) - 1
+    repeat with i from 0 to maxIdx
+        push(result, v1[i] + v2[i])
+    end
+    give result
+end
+
+action vector_dot(v1, v2)
+    set total to 0
+    set maxIdx to length(v1) - 1
+    repeat with i from 0 to maxIdx
+        set total to total + (v1[i] * v2[i])
+    end
+    give total
+end

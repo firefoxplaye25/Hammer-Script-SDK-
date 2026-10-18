@@ -1,0 +1,36 @@
+# ========================================================
+# Hammer Script Engine - hamfs.lib
+# Native Filesystem & OS Runtime Subsystem
+# ========================================================
+
+hamfs_read(filepath)              -> Read complete file content as string
+hamfs_write(filepath, content)    -> Overwrite file with content (creates if missing)
+hamfs_append(filepath, content)   -> Append content to file
+hamfs_delete(filepath)            -> Delete file or directory recursively
+hamfs_make_dir(dirpath)           -> Create directory and all parent directories
+hamfs_list(dirpath)               -> List files and folders in directory as list
+hamfs_exists(path)                -> Check if path exists (true/false)
+hamfs_is_folder(path)             -> Check if path is a directory (true/false)
+hamfs_is_file(path)               -> Check if path is a regular file (true/false)
+hamfs_size(filepath)              -> Get size in bytes
+hamfs_copy(source, destination)   -> Copy file/folder recursively
+hamfs_move(source, destination)   -> Move/rename file or folder
+hamfs_cwd()                       -> Get current working directory string
+hamfs_exec(command)               -> Execute OS command, returns map:
+                                     {"exit_code": int, "output": string}
+
+# Map Namespace Syntax (hamfs.*)
+hamfs["read"](path)
+hamfs["write"](path, content)
+hamfs["append"](path, content)
+hamfs["delete"](path)
+hamfs["make_dir"](path)
+hamfs["list"](path)
+hamfs["exists"](path)
+hamfs["is_folder"](path)
+hamfs["is_file"](path)
+hamfs["size"](path)
+hamfs["copy"](src, dst)
+hamfs["move"](src, dst)
+hamfs["cwd"]()
+hamfs["exec"](cmd)

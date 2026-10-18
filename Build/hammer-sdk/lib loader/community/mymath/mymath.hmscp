@@ -1,0 +1,11 @@
+# ========================================================
+# Hammer Script Module Implementation: mymath
+# ========================================================
+
+action mymath_hello(name)
+    give "[mymath v1.0.0] Hello, " + name + "!"
+end
+
+action mymath_calc(a, b)
+    give (a * 10) + b
+end

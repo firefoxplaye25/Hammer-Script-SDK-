@@ -1,0 +1,63 @@
+# ========================================================
+# Hammer Script - hmripa Demo
+# Primitive File & Data Encryptor / Decryptor
+# ========================================================
+
+show "=================================================="
+show "          Hammer Script - hmripa Demo             "
+show "=================================================="
+
+set secretMsg to "This is top secret classified intel from Hammer Script."
+set password to "SuperHammerKey2026!"
+
+show "1. Original message: " + secretMsg
+show "   Password: " + password
+
+show "2. Encrypting string to hex..."
+set encryptedHex to hmripa_encrypt(secretMsg, password)
+show "   Ciphertext (hex): " + encryptedHex
+
+show "3. Decrypting string with CORRECT password:"
+set decrypted to hmripa_decrypt(encryptedHex, password)
+show "   Decrypted: " + decrypted
+
+show "4. Decrypting string with WRONG password:"
+set fakeDecrypted to hmripa_decrypt(encryptedHex, "WrongPassword")
+show "   Result with wrong key: " + fakeDecrypted
+
+show "5. Computing data hash:"
+set dataHash to hmripa_hash(secretMsg)
+show "   64-bit Hash: " + dataHash
+
+show "6. Testing file encryption and decryption:"
+set originalFile to "hmripa_plain.txt"
+set encryptedFile to "hmripa_locked.enc"
+set restoredFile to "hmripa_restored.txt"
+
+hamfs_write(originalFile, "Sensitive system database credentials and private keys.\nVersion 1.0\n")
+show "   Original file created: " + originalFile
+
+show "   Encrypting file to " + encryptedFile + "..."
+set encOk to hmripa_encrypt_file(originalFile, encryptedFile, password)
+show "   Encrypted file created? " + encOk
+show "   Encrypted file size: " + hamfs_size(encryptedFile) + " bytes"
+
+show "7. Attempting decryption with WRONG password:"
+set wrongTry to hmripa_decrypt_file(encryptedFile, "bad_key_attempt.txt", "BadPassword999")
+show "   Decryption allowed with wrong key? " + wrongTry
+
+show "8. Decrypting with CORRECT password:"
+set rightTry to hmripa_decrypt_file(encryptedFile, restoredFile, password)
+show "   Decryption success? " + rightTry
+show "   Restored content: "
+show hamfs_read(restoredFile)
+
+show "9. Cleaning up demo files..."
+hamfs_delete(originalFile)
+hamfs_delete(encryptedFile)
+hamfs_delete(restoredFile)
+show "   Cleaned up temporary files!"
+
+show "=================================================="
+show " hmripa demo completed successfully!             "
+show "=================================================="

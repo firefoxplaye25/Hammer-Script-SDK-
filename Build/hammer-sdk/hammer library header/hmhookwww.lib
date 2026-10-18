@@ -1,0 +1,12 @@
+# ========================================================
+# Hammer Script Engine - hmhookwww.lib
+# Direct alias to asock networking engine
+# ========================================================
+
+hmhookwww_get(url)                -> Send HTTP/HTTPS GET request
+hmhookwww_download(url, dest)     -> Stream download from URL directly to disk
+hmhookwww_connect(host, port)     -> Open TCP socket stream
+hmhookwww_send(sock, msg)         -> Send raw TCP data
+hmhookwww_recv(sock, max_bytes)   -> Receive raw TCP buffer
+hmhookwww_close(sock)             -> Close TCP socket
+fetch(url)                        -> Fast fetch shortcut

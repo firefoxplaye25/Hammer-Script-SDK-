@@ -1,0 +1,7 @@
+# ========================================================
+# Hammer Script Library - mymath.lib
+# Author: @developer
+# ========================================================
+
+mymath_hello(name)    -> Greets with library branding
+mymath_calc(a, b)     -> Example module function

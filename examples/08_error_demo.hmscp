@@ -1,0 +1,18 @@
+# ==============================================================================
+# Example 8: Diagnostic & Detailed Error Suggestion Demo
+# ==============================================================================
+# This file contains an intentional syntax error to demonstrate Hammer Script's
+# ultra-detailed diagnostics, reason explanation, and auto-fix suggestions!
+#
+# Try running:
+#   .\bin\hammer.exe check examples\08_error_demo.hmscp
+# or
+#   .\bin\hammer.exe run examples\08_error_demo.hmscp
+# ==============================================================================
+
+show "Starting error test..."
+
+# Notice the typo below: 'set health 100' instead of 'set health to 100'
+set health 100
+
+show "Health is: " + health

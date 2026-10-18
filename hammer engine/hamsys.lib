@@ -1,0 +1,44 @@
+# ========================================================
+# Hammer Script Engine - hamsys.lib
+# System, Time, Audio & OS Platform Integration Subsystem
+# ========================================================
+
+hamsys_now()                     -> Returns detailed map with time/date parts & epoch timestamp
+hamsys_date()                    -> Returns "YYYY-MM-DD" string
+hamsys_time_str()                -> Returns "HH:MM:SS" string
+hamsys_datetime()                -> Returns "YYYY-MM-DD HH:MM:SS" string
+hamsys_uptime()                  -> Returns system uptime in seconds
+
+hamsys_os()                      -> Returns OS architecture & version ("Windows (64-bit)")
+hamsys_cpu_count()               -> Returns logical CPU core count
+hamsys_memory()                  -> Returns map {"total_mb": num, "free_mb": num, "used_percent": num}
+hamsys_user()                    -> Returns current logged-in Windows username
+hamsys_hostname()                -> Returns computer name
+hamsys_env(var_name)             -> Returns environment variable value
+
+hamsys_clipboard_set(text)       -> Copies text to Windows clipboard
+hamsys_clipboard_get()           -> Reads text from Windows clipboard
+hamsys_alert(title, message)     -> Displays native Windows alert dialog
+
+hamsys_beep(freq, duration_ms)   -> Emits hardware beep frequency for duration
+hamsys_system_sound(type)        -> Plays system notification sound ("ok", "error", "warning", "info")
+hamsys_play_sound(path, async)   -> Plays .wav audio file synchronously or in background
+
+# Object Namespace:
+hamsys["now"]()
+hamsys["date"]()
+hamsys["time_str"]()
+hamsys["datetime"]()
+hamsys["uptime"]()
+hamsys["os"]()
+hamsys["cpu_count"]()
+hamsys["memory"]()
+hamsys["user"]()
+hamsys["hostname"]()
+hamsys["env"](name)
+hamsys["clipboard_set"](text)
+hamsys["clipboard_get"]()
+hamsys["alert"](title, message)
+hamsys["beep"](freq, duration)
+hamsys["system_sound"](type)
+hamsys["play_sound"](path, async)

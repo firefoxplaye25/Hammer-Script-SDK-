@@ -1,0 +1,32 @@
+# ===================================================
+# Example 7: Number Guessing Game
+# ===================================================
+
+show "===================================="
+show "    HAMMER SCRIPT GUESSING GAME     "
+show "===================================="
+
+set secret to random(1, 20)
+set attempts to 0
+set won to no
+
+show "I picked a secret number between 1 and 20."
+
+# Simulate game guesses
+set guesses to [5, 15, 10, secret]
+
+for each g in guesses
+    if won is no then
+        set attempts to attempts + 1
+        show "Guessing: " + g
+
+        if g is secret then
+            show "Congratulations! You guessed it in " + attempts + " attempts!"
+            set won to yes
+        elseif g is less than secret then
+            show "Too low! Try higher."
+        else
+            show "Too high! Try lower."
+        end
+    end
+end

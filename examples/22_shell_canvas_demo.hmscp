@@ -1,0 +1,34 @@
+# ========================================================
+# Hammer Script - Engine Modules Demo: hmshell & hmcanvas
+# ========================================================
+
+# 1. Terminal Control with hmshell
+hmshell_title("Hammer Engine - Canvas Demo")
+show "Testing hmshell title and color..."
+
+# 2. 2D Screen Graphics with hmcanvas
+# Initialize a 40x12 character grid
+hmcanvas_init(40, 12)
+
+# Clear canvas with space
+hmcanvas_clear(" ")
+
+# Draw border boxes
+hmcanvas_box(0, 0, 40, 12, "#")
+hmcanvas_box(2, 1, 36, 4, "=")
+
+# Render centered text
+hmcanvas_text(4, 2, "HAMMER SCRIPT 2D ENGINE")
+hmcanvas_text(8, 3, "Powered by hmcanvas.lib")
+
+# Draw elements
+hmcanvas_set(5, 7, "*")
+hmcanvas_text(7, 7, "Player 1 (Active)")
+
+hmcanvas_set(5, 9, "@")
+hmcanvas_text(7, 9, "Enemy Bot (Guarding)")
+
+# Render to screen
+hmcanvas_render()
+
+show "Canvas rendered successfully!"

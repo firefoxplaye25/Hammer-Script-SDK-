@@ -1,0 +1,32 @@
+# ===================================================
+# Example 3: English Conditions & Comparisons
+# ===================================================
+
+set player_age to 20
+set points to 85
+
+# Natural English comparisons:
+if player_age is at least 18 then
+    show "Status: Eligible to participate!"
+else
+    show "Status: Minor"
+end
+
+# Multi-branch conditions:
+if points is greater than 90 then
+    show "Grade: Outstanding (A+)"
+elseif points is at least 80 then
+    show "Grade: Excellent (A)"
+elseif points is at least 70 then
+    show "Grade: Good (B)"
+else
+    show "Grade: Keep trying!"
+end
+
+# Boolean logic with natural English:
+set is_admin to yes
+set has_key to true
+
+if is_admin is yes and has_key is true then
+    show "Access Granted to Secret Chamber!"
+end

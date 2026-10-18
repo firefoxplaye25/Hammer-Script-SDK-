@@ -1,0 +1,70 @@
+# ========================================================
+# Hammer Script - System, Time & Audio Library (hamsys)
+# ========================================================
+
+show "=================================================="
+show "          Hammer Script System Library            "
+show "=================================================="
+
+# 1. Date, Time & Uptime
+show "1. Date & Time:"
+show "   Formatted DateTime: " + hamsys_datetime()
+show "   Date: " + hamsys_date()
+show "   Time: " + hamsys_time_str()
+
+set nowMap to hamsys_now()
+show "   Detailed Parts -> Year: " + nowMap["year"] + ", Month: " + nowMap["month"] + ", Day: " + nowMap["day"]
+show "   Time Parts     -> Hour: " + nowMap["hour"] + ", Min: " + nowMap["minute"] + ", Sec: " + nowMap["second"]
+show "   Epoch Timestamp: " + nowMap["timestamp"]
+show "   System Uptime: " + hamsys_uptime() + " seconds"
+
+# 2. Operating System & Hardware Information
+show ""
+show "2. Hardware & OS Information:"
+show "   OS Platform: " + hamsys_os()
+show "   CPU Cores: " + hamsys_cpu_count()
+show "   Logged User: " + hamsys_user()
+show "   Computer Name: " + hamsys_hostname()
+
+set mem to hamsys_memory()
+show "   Total RAM: " + mem["total_mb"] + " MB"
+show "   Available RAM: " + mem["free_mb"] + " MB"
+show "   RAM Load: " + mem["used_percent"] + "%"
+
+# 3. Environment Variables
+show ""
+show "3. Environment Variables:"
+set sysDrive to hamsys_env("SystemDrive")
+if sysDrive is "" then
+    set sysDrive to "C:"
+end
+show "   System Drive: " + sysDrive
+show "   OS Env: " + hamsys_env("OS")
+
+# 4. Windows Clipboard Integration
+show ""
+show "4. Windows Clipboard:"
+set clipMsg to "Hello from Hammer Script Clipboard at " + hamsys_time_str()
+hamsys_clipboard_set(clipMsg)
+set readClip to hamsys_clipboard_get()
+show "   Clipboard content set and verified: '" + readClip + "'"
+
+# 5. Audio and System Sounds
+show ""
+show "5. Audio & Sounds:"
+show "   Beeping frequency 880 Hz for 150 ms..."
+hamsys_beep(880, 150)
+
+show "   Playing native Windows notification sound (OK)..."
+hamsys_system_sound("ok")
+show "   Audio emitted successfully!"
+
+# 6. Namespace Object Usage
+show ""
+show "6. Namespace Object Syntax:"
+show "   hamsys['date'](): " + hamsys["date"]()
+show "   hamsys['cpu_count'](): " + hamsys["cpu_count"]()
+
+show "=================================================="
+show " hamsys demo completed successfully!              "
+show "=================================================="

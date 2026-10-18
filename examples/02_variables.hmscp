@@ -1,0 +1,24 @@
+# ===================================================
+# Example 2: Variables & Math Operations
+# ===================================================
+
+# You can use natural English:
+set health to 100
+set bonus to 25
+
+# Or you can use traditional equals sign '=':
+coins = 50
+shield = 10
+
+# Math operations
+set total_defense to health + shield
+show "Total defense: " + total_defense
+
+# In Hammer Script, power is simply ^
+set area to 5 ^ 2
+show "5 squared is: " + area
+
+# Standard math built-ins
+show "Square root of 64 is: " + sqrt(64)
+show "Round of 3.8 is: " + round(3.8)
+show "Absolute of -42 is: " + abs(-42)

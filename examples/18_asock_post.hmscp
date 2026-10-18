@@ -1,0 +1,40 @@
+# ========================================================
+# Hammer Script - asock & hmhookwww HTTP POST Demo
+# ========================================================
+
+show "=================================================="
+show "        HTTP POST & Custom Headers Demo           "
+show "=================================================="
+
+# 1. Sending POST via asock_post with JSON payload
+set payload to "{\"user\": \"HammerCoder\", \"action\": \"benchmark\", \"score\": 999}"
+set customHeaders to {
+    "Content-Type": "application/json",
+    "User-Agent": "HammerScript-Client/2.0"
+}
+
+show "1. Sending POST via asock_post to httpbin.org/post:"
+set res1 to asock_post("https://httpbin.org/post", payload, customHeaders)
+show "   HTTP Status: " + res1["status"]
+show "   Success? " + res1["ok"]
+
+# 2. Sending POST via hmhookwww_post (interchangeable twin!)
+show "\n2. Sending POST via hmhookwww_post:"
+set res2 to hmhookwww_post("https://httpbin.org/post", "{\"message\": \"Hello from hmhookwww!\"}")
+show "   HTTP Status: " + res2["status"]
+show "   Success? " + res2["ok"]
+
+# 3. Sending POST via smart fetch() (passing body triggers POST)
+show "\n3. Sending POST via smart fetch():"
+set res3 to fetch("https://httpbin.org/post", "{\"tool\": \"HammerScript fetch\"}")
+show "   HTTP Status: " + res3["status"]
+show "   Success? " + res3["ok"]
+
+show "\n4. Parsing the JSON response received from server:"
+set responseData to json_parse(res3["body"])
+show "   Echoed Data: " + responseData["data"]
+show "   Server Origin IP: " + responseData["origin"]
+
+show "=================================================="
+show " HTTP POST demo completed successfully!           "
+show "=================================================="

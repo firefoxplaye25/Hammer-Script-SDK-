@@ -1,0 +1,21 @@
+# ========================================================
+# Hammer Script Engine - hmcanvas.lib
+# 2D Screen Buffer, Shapes, Drawing & Canvas Subsystem
+# ========================================================
+
+hmcanvas_init(width, height)     -> Initializes a 2D screen buffer of width x height
+hmcanvas_clear(fill_char)        -> Clears canvas buffer (default spaces)
+hmcanvas_set(x, y, char_str)     -> Draws a single character at coordinate (x, y)
+hmcanvas_text(x, y, text_str)    -> Draws text horizontally starting at (x, y)
+hmcanvas_box(x, y, w, h, border) -> Draws a box rectangle at (x, y) with dimensions w x h
+hmcanvas_render()                -> Prints the current 2D canvas buffer to console
+hmcanvas_to_string()             -> Returns the canvas buffer as a multiline string
+
+# Object Namespace:
+hmcanvas["init"](w, h)
+hmcanvas["clear"](fill)
+hmcanvas["set"](x, y, ch)
+hmcanvas["text"](x, y, txt)
+hmcanvas["box"](x, y, w, h, border)
+hmcanvas["render"]()
+hmcanvas["to_string"]()
